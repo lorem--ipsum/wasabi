@@ -1,0 +1,26 @@
+{
+  "name": "wasabi",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lorem--ipsum/wasabi",
+  "authors": [
+    "lorem--ipsum <vaporzub@gmail.com>"
+  ],
+  "description": "A spicy fuzzy match filter for AngularJS",
+  "main": "wasabi.min.js",
+  "keywords": [
+    "levenshtein",
+    "fuzzy",
+    "angularjs",
+    "match",
+    "spice",
+    "kitten"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

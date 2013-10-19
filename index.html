@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="wpp">
+<head>
+  <title>Wasabi</title>
+</head>
+<body ng-controller="DemoCtrl">
+ <input ng-model="filter_value"/>
+ <div ng-repeat="item in items | fuzzy:filter_value track by $index">
+ {{item.value}} {{item.score}}
+ </div>
+</body>
+<!-- AngularJS -->
+<script type="text/javascript" src="bower_components/angular-unstable/angular.min.js"></script>
+
+<!-- Project libs -->
+<script type="text/javascript" src="src/wasabi.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+</html>
