@@ -1,13 +1,20 @@
 angular.module('wasabi', [])
 
 .filter('fuzzy', ['$utils', function($utils) {
-  return function(items, value) {
+  return function(items, value, max) {
+    if (!value) {
+      return [];
+    }
+    
+    value = value.toLowerCase();
+    
     return items.map(function(item) {
-      item.score = $utils.distance(value, item.value);
+      item.score = $utils.distance(value, item.value.toLowerCase());
+      item.label = item.value;
       return item;
     }).sort(function(item_a, item_b) {
       return item_a.score - item_b.score;
-    });
+    }).slice(0, max);
   }
 }])
 

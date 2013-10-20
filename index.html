@@ -2,15 +2,30 @@
 <html ng-app="wpp">
 <head>
   <title>Wasabi</title>
+  <link rel="stylesheet" type="text/css" href="css/kube.min.css">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body ng-controller="DemoCtrl">
- <input ng-model="filter_value"/>
- <div ng-repeat="item in items | fuzzy:filter_value track by $index">
- {{item.value}} {{item.score}}
- </div>
+<body>
+  <div class="units-row">
+    <div class="unit-centered unit-40" ng-controller="DemoCtrl">
+      <div class="units-row">
+      <div class="unit-100">Wasabi</div>
+      <div class="unit-25">
+        <input id="main-input" ng-model="filter_value"/>
+      </div>
+      </div>
+      <div id="main-list" class="units-row">
+        <div class='units-row result' ng-class="{true: 'even', false: 'odd'}[$even]" ng-repeat="item in items | fuzzy:filter_value:10 track by $index">
+          <div class='unit-25'><span class="score">{{item.score}}</span></div>
+          <div class='unit-75'><span class="value">{{item.label}}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
 </body>
 <!-- AngularJS -->
-<script type="text/javascript" src="bower_components/angular-unstable/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
 <!-- Project libs -->
 <script type="text/javascript" src="src/wasabi.js"></script>

@@ -1,0 +1,28 @@
+body {
+  width: 900px;
+  padding-top: 200px;
+  margin: 0px auto;
+}
+
+#main-input {
+  font-size: 20px;
+  height: 30px;
+  width: 100%;
+}
+
+.result {
+  padding: 20px;
+  margin-bottom: 0px;
+}
+
+.result.even {
+  background-color: rgb(231, 234, 255);
+}
+
+.result.odd {
+  background-color: rgb(235, 235, 235);
+}
+
+.score {
+  font-size: 20px;
+}
