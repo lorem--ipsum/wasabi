@@ -1,6 +1,6 @@
 angular.module('wpp', ['wasabi'])
 
-.controller('DemoCtrl', ['$scope', function($scope) {
+.controller('DemoCtrl', ['$scope', '$sce', function($scope, $sce) {
   $scope.items = [
     {value: 'Lorem'},
     {value: 'ipsum'},

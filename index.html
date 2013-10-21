@@ -6,22 +6,33 @@
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-  <div class="units-row">
-    <div class="unit-centered unit-40" ng-controller="DemoCtrl">
+  <div class="units-row" ng-controller="DemoCtrl">
+    <div class="unit-centered unit-40">
       <div class="units-row">
-      <div class="unit-100">Wasabi</div>
-      <div class="unit-25">
-        <input id="main-input" ng-model="filter_value"/>
+      <div class="unit-centered unit-25" style="text-align:center;">
+        <h1>Wasabi</h1>
       </div>
-      </div>
-      <div id="main-list" class="units-row">
-        <div class='units-row result' ng-class="{true: 'even', false: 'odd'}[$even]" ng-repeat="item in items | fuzzy:filter_value:10 track by $index">
-          <div class='unit-25'><span class="score">{{item.score}}</span></div>
-          <div class='unit-75'><span class="value">{{item.label}}</span></div>
-        </div>
+      <div class="unit-100">
+      <form>
+        <label>
+          <table class="width-100 table-flat">
+            <tr>
+              <!--<td><span class="input-prepend">http://</span></td>-->
+              <td class="width-100"><input id="main-input" type="text" ng-model="filter_value" class="width-100"></td>
+            </tr>
+          </table>
+        </label>
+      </form>
       </div>
     </div>
   </div>
+  <div class="unit-100">
+    <div class='units-row result' ng-class="{true: 'even', false: 'odd'}[$even]" ng-repeat="item in items | fuzzy:filter_value:10 track by $index">
+      <div class='unit-25'><span class="score">{{item.score}}</span></div>
+      <div class='unit-75'><span class="value" ng-bind-html="item.label"></span></div>
+    </div>
+  </div>
+</div>
  
 </body>
 <!-- AngularJS -->

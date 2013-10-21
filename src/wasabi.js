@@ -1,6 +1,6 @@
 angular.module('wasabi', [])
 
-.filter('fuzzy', ['$utils', function($utils) {
+.filter('fuzzy', ['$utils', '$sce', function($utils, $sce) {
   return function(items, value, max) {
     if (!value) {
       return [];
@@ -10,7 +10,7 @@ angular.module('wasabi', [])
     
     return items.map(function(item) {
       item.score = $utils.distance(value, item.value.toLowerCase());
-      item.label = item.value;
+      item.label = $sce.trustAsHtml('<i>' + item.value + '</i>');
       return item;
     }).sort(function(item_a, item_b) {
       return item_a.score - item_b.score;

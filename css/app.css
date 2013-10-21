@@ -7,12 +7,12 @@ body {
 #main-input {
   font-size: 20px;
   height: 30px;
-  width: 100%;
 }
 
 .result {
-  padding: 20px;
+  padding: 5px;
   margin-bottom: 0px;
+  border: 1px solid rgb(231, 234, 255);
 }
 
 .result.even {
@@ -20,7 +20,7 @@ body {
 }
 
 .result.odd {
-  background-color: rgb(235, 235, 235);
+  
 }
 
 .score {
